@@ -27,23 +27,13 @@ int main() {
 
         if(start < end){
 
-            int i, j, k;
+            int i = -1, j = -1, k = -1;
             for(int idx = start; idx <= end; idx++){
-                if(arr[idx] == n){
-                    j = idx;
-                    break;
-                }
-            }
-
-            for(int idx = start; idx < j; idx++){
-                if(arr[idx] < arr[j]){
+                if(arr[idx] < n && j == -1){
                     i = idx;
-                    break;
-                }
-            }
-
-            for(int idx = j + 1; idx <= end; idx++){
-                if(arr[idx] < arr[j]){
+                }else if(arr[idx] == n){
+                    j = idx;
+                }else if(arr[idx] < n && j != -1){
                     k = idx;
                     break;
                 }
